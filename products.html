@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitFuel - Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-indigo-600">FitFuel</h1>
+    <nav class="flex items-center space-x-6">
+      <a href="index.html" class="hover:text-indigo-600">Home</a>
+      <a href="products.html" class="hover:text-indigo-600">Products</a>
+      <a href="lab-reports.html" class="hover:text-indigo-600">Lab Reports</a>
+      <a href="wallet.html" class="hover:text-indigo-600">Wallet</a>
+      <a href="cart.html" class="hover:text-indigo-600">Cart</a>
+      <a href="login.html" class="hover:text-indigo-600">Login</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto mt-6 flex space-x-6">
+
+    <!-- Sidebar Filters -->
+    <aside class="w-1/4 bg-white shadow-md rounded-lg p-4">
+      <h2 class="text-lg font-semibold mb-4">Filters</h2>
+
+      <!-- Reset Button -->
+      <button class="text-sm text-gray-500 border px-3 py-1 rounded mb-4">RESET</button>
+
+      <!-- Filter Sections -->
+      <div class="space-y-4 text-sm font-semibold">
+        <div class="flex justify-between items-center cursor-pointer border-b pb-2">
+          <span>SORT BY</span>
+          <span>›</span>
+        </div>
+        <div class="flex justify-between items-center cursor-pointer border-b pb-2">
+          <span>DISCOUNT</span>
+          <span>›</span>
+        </div>
+        <div class="flex justify-between items-center cursor-pointer border-b pb-2">
+          <span>RATINGS</span>
+          <span>›</span>
+        </div>
+        <div class="flex justify-between items-center cursor-pointer border-b pb-2">
+          <span>FILTER BY GOALS</span>
+          <span>›</span>
+        </div>
+        <div class="flex justify-between items-center cursor-pointer border-b pb-2">
+          <span>OFFERS</span>
+          <span>›</span>
+        </div>
+        <div class="flex justify-between items-center cursor-pointer border-b pb-2">
+          <span>STOCK AVAILABILITY</span>
+          <span>›</span>
+        </div>
+
+        <!-- Price Range -->
+        <div class="mt-4">
+          <h3 class="font-semibold text-sm mb-2">PRICE</h3>
+          <input type="range" min="100" max="20000" class="w-full">
+          <p class="text-xs text-gray-600 mt-1">₹139 - ₹16,100</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Products Grid -->
+    <section class="w-3/4 grid grid-cols-3 gap-6">
+      <!-- Section 1: Whey Protein -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/whey.jpg" alt="Whey Protein" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Whey Protein</h3>
+        <p class="text-sm text-gray-600">High-quality protein supplement.</p>
+        <p class="mt-1 font-bold">₹2,499</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 2: Creatine -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/creatine.jpg" alt="Creatine" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Creatine</h3>
+        <p class="text-sm text-gray-600">Boost strength & endurance.</p>
+        <p class="mt-1 font-bold">₹1,299</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 3: Pre-Workout -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/preworkout.jpg" alt="Pre-Workout" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Pre-Workout</h3>
+        <p class="text-sm text-gray-600">Energy & focus enhancer.</p>
+        <p class="mt-1 font-bold">₹1,999</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 4: Protein Bars -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/proteinbar.jpg" alt="Protein Bar" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Protein Bar</h3>
+        <p class="text-sm text-gray-600">Healthy on-the-go snack.</p>
+        <p class="mt-1 font-bold">₹499</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 5: BCAA -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/bcaa.jpg" alt="BCAA" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">BCAA</h3>
+        <p class="text-sm text-gray-600">Amino acids for recovery.</p>
+        <p class="mt-1 font-bold">₹1,599</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 6: Gym Bags -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/gymbag.jpg" alt="Gym Bag" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Gym Bag</h3>
+        <p class="text-sm text-gray-600">Durable & stylish bags.</p>
+        <p class="mt-1 font-bold">₹1,099</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 7: Water Bottle -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/waterbottle.jpg" alt="Water Bottle" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Water Bottle</h3>
+        <p class="text-sm text-gray-600">Stay hydrated anytime.</p>
+        <p class="mt-1 font-bold">₹299</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 8: Vitamins -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/vitamins.jpg" alt="Vitamins" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Vitamins</h3>
+        <p class="text-sm text-gray-600">Daily nutrition support.</p>
+        <p class="mt-1 font-bold">₹899</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 9: Fish Oils -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/fishoil.jpg" alt="Fish Oil" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Fish Oils</h3>
+        <p class="text-sm text-gray-600">Omega-3 rich supplement.</p>
+        <p class="mt-1 font-bold">₹1,199</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 10: Oats -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/oats.jpg" alt="Oats" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Oats</h3>
+        <p class="text-sm text-gray-600">Healthy breakfast option.</p>
+        <p class="mt-1 font-bold">₹399</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 11: Mass Gainer -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/massgainer.jpg" alt="Mass Gainer" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Mass Gainer</h3>
+        <p class="text-sm text-gray-600">Build muscle & weight.</p>
+        <p class="mt-1 font-bold">₹2,799</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Section 12: Glutamine -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <img src="img/glutamine.jpg" alt="Glutamine" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Glutamine</h3>
+        <p class="text-sm text-gray-600">Muscle recovery formula.</p>
+        <p class="mt-1 font-bold">₹1,499</p>
+        <div class="flex justify-between mt-3">
+          <button class="bg-indigo-600 text-white px-3 py-1 rounded">Add to Cart</button>
+          <button class="border border-indigo-600 text-indigo-600 px-3 py-1 rounded">Buy Now</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

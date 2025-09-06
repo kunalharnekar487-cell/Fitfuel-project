@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitFuel - Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    th { background: #f4b400; color: white; }
+    .btn { padding: 5px 10px; margin: 2px; cursor: pointer; border: none; border-radius: 4px; }
+    .btn-add { background: green; color: white; }
+    .btn-remove { background: red; color: white; }
+    .btn-delete { background: darkred; color: white; }
+    .btn-link { background: #333; color: white; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Panel</h1>
+    <nav>
+      <button class="btn btn-link" onclick="window.location.href='user-dashboard.html'">User Dashboard</button>
+      <button class="btn btn-link" onclick="window.location.href='products.html'">Products</button>
+      <a href="logout.html" class="btn btn-link">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Wallet Overview -->
+  <section>
+    <h2>Wallet Overview</h2>
+    <div id="wallet-section" class="wallet-container"></div>
+  </section>
+
+  <!-- Order Management -->
+  <section>
+    <h2>Order Management</h2>
+    <div id="order-section"></div>
+  </section>
+
+  <!-- User Management -->
+  <section>
+    <h2>User Management</h2>
+    <div id="user-section"></div>
+  </section>
+
+  <script>
+    // Get logged in user
+    let user = JSON.parse(localStorage.getItem("fitfuel_user"));
+
+    // Restrict access
+    if (!user || user.role !== "admin") {
+      alert("Access denied! Only admins can view this page.");
+      window.location.href = "login.html";
+    }
+
+    // ---------------- WALLET MANAGEMENT ----------------
+    let allWallets = JSON.parse(localStorage.getItem("fitfuel_wallets")) || [];
+    if (allWallets.length === 0) {
+      allWallets = [
+        { username: "John", ffCash: 500, lastUpdated: "2025-09-01" },
+        { username: "Emma", ffCash: 300, lastUpdated: "2025-09-03" },
+        { username: "Mike", ffCash: 200, lastUpdated: "2025-09-04" }
+      ];
+      localStorage.setItem("fitfuel_wallets", JSON.stringify(allWallets));
+    }
+
+    function updateWallets() {
+      let totalCash = allWallets.reduce((sum, w) => sum + w.ffCash, 0);
+      let tableRows = allWallets.map((u, i) => `
+        <tr>
+          <td>${u.username}</td>
+          <td>₹${u.ffCash}</td>
+          <td>${u.lastUpdated}</td>
+          <td>
+            <button class="btn btn-add" onclick="addCash(${i})">+100</button>
+            <button class="btn btn-remove" onclick="removeCash(${i})">-100</button>
+          </td>
+        </tr>
+      `).join("");
+
+      document.getElementById("wallet-section").innerHTML = `
+        <h3>Total FF Cash: ₹${totalCash}</h3>
+        <table>
+          <tr><th>User</th><th>FF Cash</th><th>Last Updated</th><th>Actions</th></tr>
+          ${tableRows}
+        </table>
+      `;
+      localStorage.setItem("fitfuel_wallets", JSON.stringify(allWallets));
+    }
+
+    function addCash(i) {
+      allWallets[i].ffCash += 100;
+      allWallets[i].lastUpdated = new Date().toISOString().split("T")[0];
+      updateWallets();
+    }
+
+    function removeCash(i) {
+      if (allWallets[i].ffCash >= 100) {
+        allWallets[i].ffCash -= 100;
+        allWallets[i].lastUpdated = new Date().toISOString().split("T")[0];
+        updateWallets();
+      } else {
+        alert("Not enough balance!");
+      }
+    }
+
+    updateWallets();
+
+    // ---------------- ORDER MANAGEMENT ----------------
+    let allOrders = JSON.parse(localStorage.getItem("fitfuel_orders")) || [];
+    if (allOrders.length === 0) {
+      allOrders = [
+        { id: 1, user: "John", items: ["Whey Protein", "Creatine"], total: 1500 },
+        { id: 2, user: "Emma", items: ["BCAA", "Water Bottle"], total: 800 }
+      ];
+      localStorage.setItem("fitfuel_orders", JSON.stringify(allOrders));
+    }
+
+    let orderRows = allOrders.map(o => `
+      <tr>
+        <td>${o.id}</td>
+        <td>${o.user}</td>
+        <td>${o.items.join(", ")}</td>
+        <td>₹${o.total}</td>
+      </tr>
+    `).join("");
+
+    document.getElementById("order-section").innerHTML = `
+      <table>
+        <tr><th>Order ID</th><th>User</th><th>Items</th><th>Total</th></tr>
+        ${orderRows}
+      </table>
+    `;
+
+    // ---------------- USER MANAGEMENT ----------------
+    let allUsers = JSON.parse(localStorage.getItem("fitfuel_users")) || [];
+    if (allUsers.length === 0) {
+      allUsers = [
+        { username: "John", role: "user" },
+        { username: "Emma", role: "user" },
+        { username: "Mike", role: "user" },
+        { username: "Admin", role: "admin" }
+      ];
+      localStorage.setItem("fitfuel_users", JSON.stringify(allUsers));
+    }
+
+    function deleteUser(i) {
+      if (allUsers[i].role === "admin") {
+        alert("You cannot delete an admin!");
+        return;
+      }
+      allUsers.splice(i, 1);
+      localStorage.setItem("fitfuel_users", JSON.stringify(allUsers));
+      renderUsers();
+    }
+
+    function renderUsers() {
+      let userRows = allUsers.map((u, i) => `
+        <tr>
+          <td>${u.username}</td>
+          <td>${u.role}</td>
+          <td><button class="btn btn-delete" onclick="deleteUser(${i})">Delete</button></td>
+        </tr>
+      `).join("");
+
+      document.getElementById("user-section").innerHTML = `
+        <table>
+          <tr><th>Username</th><th>Role</th><th>Actions</th></tr>
+          ${userRows}
+        </table>
+      `;
+    }
+
+    renderUsers();
+  </script>
+</body>
+</html>

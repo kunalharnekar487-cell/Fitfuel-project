@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 10px 20px;
+  background: #e8f5e9;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: rgb(15, 15, 15);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.login-container {
+  max-width: 40px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.login-container form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  background-color: #45a049;
+}
+body 
+{ margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #333; 
+
+}
+
+header 
+{ background-color: #222; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; 
+
+}
+
+header h1 { margin: 0; }
+
+nav a { color: white; margin-left: 20px; text-decoration: none; }
+
+.hero { text-align: center; padding: 100px 20px; background: #e8f5e9; }
+
+.hero h2 { font-size: 2.5em; margin-bottom: 10px; }
+
+.hero .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #4caf50; color: white; text-decoration: none; border-radius: 5px; }
+
+footer { background-color: #222; color: white; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0; }
+*/ .login-container { max-width: 400px; margin: 80px auto; background: #fff; padding: 30px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+
+.login-container h2 { text-align: center; margin-bottom: 20px; }
+
+.login-container form label { display: block; margin-top: 10px; }
+
+.login-container form input { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+
+.login-container form button { width: 100%; padding: 10px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+
+.login-container form button:hover { background-color: #45a049; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #333; }
+
+header { background-color: #222; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+
+header h1 { margin: 0; }
+
+nav a { color: white; margin-left: 20px; text-decoration: none; }
+
+.hero { text-align: center; padding: 100px 20px; background: #e8f5e9; }
+
+.hero h2 { font-size: 2.5em; margin-bottom: 10px; }
+
+.hero .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #4caf50; color: white; text-decoration: none; border-radius: 5px; }
+
+footer { background-color: #222; color: white; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0; }
+.login-container { max-width: 400px; margin: 80px auto; background: #fff; padding: 30px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+
+.login-container h2 { text-align: center; margin-bottom: 20px; }
+
+.login-container form label { display: block; margin-top: 10px; }
+
+.login-container form input { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+
+.login-container form button { width: 100%; padding: 10px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+
+.login-container form button:hover { background-color: #45a049; }
+ .product-list { padding: 40px 20px; text-align: center; }
+
+.products { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+.product { background: #fff; padding: 20px; width: 250px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+
+.product img { width: 100%; height: 200px; object-fit: cover; }
+
+.product h3 { margin: 10px 0; }
+
+.product button { background: #4caf50; border: none; color: white; padding: 10px 15px; cursor: pointer; border-radius: 5px; }
+
+.product button:hover { background: #45a049; }
+.product-list ul li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.product-list ul li a {
+  color: #cf1313;
+  text-decoration: underline;
+}
+
+.product-list ul li a:hover {
+  color: #d80b0b;
+}
+/* Cart styles */
+#cart-items .product {
+  display: inline-block;
+  width: 250px;
+  margin: 10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#cart-items .product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#cart-items .product h3 {
+  margin: 10px 0;
+}
+
+#cart-items .product button {
+  margin-top: 10px;
+  background: #ff5252;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart-items .product button:hover {
+  background: #e53935;
+}
+.btn.secondary {
+  background-color: #2196f3;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn.secondary:hover {
+  background-color: #1976d2;
+}
+
+.floating-bottles {
+  position: relative;
+  height: 0;
+}
+
+.bottle {
+  position: absolute;
+  width: 80px;
+  opacity: 0.7;
+  animation: floatUpDown 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+.float1 { top: 50px; left: 10%; animation-delay: 0s; }
+.float2 { top: 80px; left: 40%; animation-delay: 1s; }
+.float3 { top: 60px; left: 70%; animation-delay: 2s; }
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+img
+{
+  width: 500px;
+  float: left;
+}
+.login-btn {
+  position: absolute;
+  top: 20px;
+  scroll-margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #34ad0f;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.login-btn:hover {
+  background-color: #ff3b3b;
+}
+.floating-whey {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 100px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.btn, button {
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.btn:hover, button:hover {
+  transform: scale(1.05);
+  background-color: #ff6b6b;
+  color: #fff;
+}
+/* Existing style (enhanced) */
+.login-link {
+  color: #ff6b6b;
+  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.5);  /* soft red shadow */
+  border-radius: 5px;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  background-color: #ff6b6b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.8); /* stronger on hover */
+}
+/* Shared style for buttons */
+button, .btn {
+  background-color: #28a745; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(40, 167, 69, 0.3); /* soft green shadow */
+}
+
+button:hover, .btn:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.6); /* stronger on hover */
+  transform: scale(1.05);
+}
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: url('img gym-bg.jpg') no-repeat center center fixed; background-size: cover; }

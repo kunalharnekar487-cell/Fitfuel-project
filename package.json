@@ -1,0 +1,21 @@
+{
+  "name": "fitfuel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cart - Copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "otp-generator": "^4.0.1",
+    "twilio": "^5.8.0"
+  }
+}

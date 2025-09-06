@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitFuel | Gym Products Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+    .slider-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('bg image pd.jpg');">
+
+  <header class="flex justify-between items-center px-6 py-4 bg-gray-100">
+    <h1 class="text-2xl font-bold">FitFuel</h1>
+    <nav class="flex space-x-6 items-center">
+      <a href="wallet.html" class="text-gray-700 hover:text-red-600">Wallet 💰</a>
+      <a href="cart.html" class="text-gray-700 hover:text-red-600 relative">
+        Cart 🛒 <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+      </a>
+      <a href="login.html" class="text-gray-700 hover:text-red-600">Login</a>
+      <a href="wishlist.html" class="text-gray-500 hover:text-red-600">Wishlist</a>
+      <a href="user-dashboard.html" class="text-gray-500 hover:text-red-600">user-dashboard</a>
+      <a href="Admin-dashboard.html" class="text-gray-500 hover:text-red-600">admin-dashboard</a>
+    </nav>
+  </header>
+
+  <main class="text-center py-10">
+    <section class="hero">
+      <h2 class="text-4xl font-bold text-black mb-2">Your Trusted Gym Supplements</h2>
+      <p class="text-lg text-black">Shop quality-tested protein, creatine, mass gainers and more!</p>
+      <a href="products.html" class="btn bg-yellow-400 text-black px-6 py-2 mt-4 inline-block rounded shadow hover:bg-yellow-500">Shop Now</a>
+    </section>
+
+    <!-- 🚀 Slider Section Starts Here -->
+    <section class="mt-10 relative max-w-6xl mx-auto overflow-hidden rounded-xl shadow-lg bg-white">
+      <div id="slider" class="slider-track" style="height: 360px;">
+        <!-- Slide 1 -->
+        <a href="products.html" class="slider-slide flex justify-between items-center p-10 bg-yellow-100">
+          <div>
+            <h3 class="text-3xl font-bold mb-2">Protein Powder</h3>
+            <p class="text-lg mb-2">Whey Isolate | Muscle Gain Formula</p>
+            <p class="text-xl font-semibold text-green-600">Now ₹1,899 <span class="text-red-500 line-through text-sm">₹2,599</span></p>
+          </div>
+          <img src="https://i.postimg.cc/Gh0PBhMh/protein.png" alt="Protein" class="w-64 h-64">
+        </a>
+        <!-- Additional slides omitted for brevity -->
+      </div>
+    </section>
+
+    <!-- ⭐ Popular Products Section with Larger Cards -->
+    <section class="mt-16 bg-green-100 py-16">
+      <div class="max-w-7xl mx-auto px-8">
+        <h2 class="text-4xl font-bold text-black mb-12 text-center">🔥 Popular Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+          <!-- Product Cards -->
+          <a href="products.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all">
+            <img src="https://i.postimg.cc/Gh0PBhMh/protein.png" alt="Protein" class="w-full h-40 object-contain mb-4">
+            <h3 class="text-xl font-semibold">Whey Protein</h3>
+            <p class="text-green-600 font-bold">₹1,899</p>
+          </a>
+          <a href="products.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all">
+            <img src="https://i.postimg.cc/kGFpYW86/bcaa.png" alt="BCAA" class="w-full h-40 object-contain mb-4">
+            <h3 class="text-xl font-semibold">BCAA</h3>
+            <p class="text-green-600 font-bold">₹1,299</p>
+          </a>
+          <a href="products.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all">
+            <img src="https://i.postimg.cc/vTvhNxf7/creatine.png" alt="Creatine" class="w-full h-40 object-contain mb-4">
+            <h3 class="text-xl font-semibold">Creatine</h3>
+            <p class="text-green-600 font-bold">₹999</p>
+          </a>
+          <a href="products.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all">
+            <img src="https://i.postimg.cc/3RN9VXMK/bottle.png" alt="Water Bottle" class="w-full h-40 object-contain mb-4">
+            <h3 class="text-xl font-semibold">Sipper
+            </h3>
+            <p class="text-green-600 font-bold">₹499</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center mt-10 text-white bg-black py-4">
+    <p>&copy; 2025 FitFuel. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Slider -->
+  <script>
+    const slider = document.getElementById("slider");
+    let index = 0;
+    const slides = slider.children.length;
+
+    setInterval(() => {
+      index = (index + 1) % slides;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000);
+  </script>
+
+</body>
+</html>

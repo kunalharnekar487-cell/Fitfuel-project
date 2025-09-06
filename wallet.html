@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitFuel Wallet</title>
+  <script defer src="wallet.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-yellow-400 p-4 flex justify-between items-center shadow">
+    <h1 class="text-xl font-bold">💰 FitFuel Wallet</h1>
+    <a href="index.html" class="text-sm bg-black text-white px-4 py-2 rounded hover:bg-gray-800">← Back to Home</a>
+  </header>
+
+  <!-- Wallet Main Section -->
+  <main class="max-w-2xl mx-auto bg-white p-6 mt-10 rounded-lg shadow">
+    <h2 class="text-xl font-semibold mb-4">Wallet Balance</h2>
+    <div class="text-4xl font-bold text-green-600 mb-6">
+      ₹<span id="wallet-balance">0.00</span>
+    </div>
+
+    <button onclick="addMoney()" class="bg-yellow-400 text-black font-bold px-5 py-2 rounded hover:bg-yellow-500 transition">
+      ➕ Add Money
+    </button>
+
+    <!-- History -->
+    <div class="mt-8">
+      <h3 class="text-lg font-semibold mb-2">Transaction History</h3>
+      <ul id="transaction-list" class="space-y-3">
+        <!-- Transactions will appear here -->
+      </ul>
+      <div id="wallet-section" class="wallet-container">
+  <!-- Wallet details will be loaded here by JavaScript -->
+</div>
+
+    </div>
+  </main>
+<script>
+// Simulating user data (Replace this with real data from backend or localStorage)
+let userWallet = {
+    username: "Kunal",
+    ffCash: 250, // Change to 0 to test no balance
+    lastUpdated: "08 Aug 2025"
+};
+
+function renderWallet() {
+    let walletSection = document.getElementById("wallet-section");
+
+    if (userWallet.ffCash > 0) {
+        walletSection.innerHTML = `
+            <div class="wallet-balance">₹${userWallet.ffCash} FF Cash</div>
+            <div class="wallet-details">
+                <p>Account Holder: <strong>${userWallet.username}</strong></p>
+                <p>Last Updated: ${userWallet.lastUpdated}</p>
+                <p>Use your FF Cash on protein powders, gym gear, and more!</p>
+            </div>
+        `;
+    } else {
+        walletSection.innerHTML = `
+            <div class="no-balance">
+                You have no FF Cash yet. Start shopping to earn rewards!
+            </div>
+        `;
+    }
+}
+
+renderWallet();
+</script>
+
+</body>
+</html>

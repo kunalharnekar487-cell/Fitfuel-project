@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - FitFuel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-5xl bg-white rounded-lg shadow-lg overflow-hidden flex">
+    
+    <!-- Left: Image + Quote -->
+    <div class="w-1/2 relative hidden md:block">
+      <img src="athelte builder.png" alt="Fit Athlete" class="h-full w-full object-cover">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-6">
+        <p class="text-xl font-bold">𝕊𝕥𝕣𝕠𝕟𝕘 𝕥𝕠𝕕𝕒𝕪, 𝕤𝕥𝕣𝕠𝕟𝕘𝕖𝕣 𝕥𝕠𝕞𝕠𝕣𝕣𝕠𝕨</p>
+      </div>
+    </div>
+
+    <!-- Right: Login Form -->
+    <div class="w-full md:w-1/2 p-10 relative bg-cover bg-center" style="background-image: url('bg image pd.jpg');">
+      <button onclick="window.location.href='index.html'" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl font-bold">&times;</button>
+
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Welcome to FitFuel!</h2>
+
+      <!-- Request OTP -->
+      <form id="loginForm">
+        <label class="block mb-2 text-sm text-gray-600">Mobile Number</label>
+        <input id="mobile" type="text" placeholder="Enter your number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 mb-4" required>
+        <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-white py-2 rounded-lg font-semibold">
+          Request OTP
+        </button>
+      </form>
+
+      <!-- OTP Section -->
+      <div id="otpSection" class="mt-6 hidden">
+        <label class="block mb-2 text-sm text-gray-600">Enter OTP</label>
+        <input id="otp" type="text" placeholder="123456" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-yellow-500">
+        <button onclick="verifyOtp()" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-semibold">
+          Verify OTP
+        </button>
+        <p id="status" class="text-center mt-4 text-sm"></p>
+      </div>
+
+      <!-- Links -->
+      <p class="text-sm text-center mt-6 text-gray-700">
+        Don’t have an account?
+        <a href="register.html" class="text-yellow-500 font-semibold hover:underline">Sign Up</a>
+      </p>
+      <div class="text-center mt-4">
+        <a href="index.html" class="text-sm text-gray-600 hover:text-yellow-500 font-medium">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const mobile = document.getElementById("mobile").value;
+
+  if (mobile.length === 10 && !isNaN(mobile)) {
+    // Generate random 6-digit OTP (only numbers)
+    let otp = Math.floor(100000 + Math.random() * 900000);
+    localStorage.setItem("fitfuel_otp", otp);
+    localStorage.setItem("fitfuel_mobile", mobile);
+
+    document.getElementById("otpSection").classList.remove("hidden");
+    document.getElementById("status").innerText = "OTP sent: " + otp; // show OTP for demo
+  } else {
+    alert("Please enter a valid 10-digit mobile number.");
+  }
+});
+
+function verifyOtp() {
+  const otp = document.getElementById("otp").value;
+  const storedOtp = localStorage.getItem("fitfuel_otp");
+  const mobile = localStorage.getItem("fitfuel_mobile");
+
+  if (otp === storedOtp) {
+    // Save user info
+    let user = {
+      username: "FitFuel User",
+      phone: mobile,
+      email: "user@fitfuel.com",
+      ffCash: 200,
+      lastUpdated: new Date().toLocaleString(),
+      role: "user"
+    };
+    localStorage.setItem("fitfuel_user", JSON.stringify(user));
+
+    document.getElementById("status").innerText = "Login successful!";
+    setTimeout(() => {
+      if (user.role === "admin") {
+        window.location.href = "admin-dashboard.html";
+      } else {
+        window.location.href = "user-dashboard.html";
+      }
+    }, 1000);
+  } else {
+    document.getElementById("status").innerText = "Invalid OTP!";
+  }
+}
+</script>
+
+</body>
+</html>

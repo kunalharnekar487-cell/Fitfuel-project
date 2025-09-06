@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | FitFuel</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+    .checkout-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .checkout-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .checkout-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .checkout-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-right: 20px;
+    }
+    .checkout-details {
+      flex: 1;
+    }
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: right;
+    }
+    .place-order {
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .place-order:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="checkout-container">
+  <h2>Checkout</h2>
+  <div class="checkout-item">
+    <img id="product-img" src="" alt="Product Image">
+    <div class="checkout-details">
+      <h3 id="product-name"></h3>
+      <p id="product-price"></p>
+      <label>Quantity: <input type="number" id="quantity" value="1" min="1" style="width:60px;"></label>
+    </div>
+  </div>
+  <div class="total" id="total-amount">Total: ₹0</div>
+  <button class="place-order" onclick="placeOrder()">Place Order</button>
+</div>
+
+<script>
+  const product = JSON.parse(localStorage.getItem("buyNowProduct"));
+
+  if (product) {
+    document.getElementById("product-img").src = product.image || 'img/default.jpg';
+    document.getElementById("product-name").textContent = product.name;
+    document.getElementById("product-price").textContent = "Price: ₹" + product.price;
+    updateTotal();
+
+    document.getElementById("quantity").addEventListener("input", updateTotal);
+  } else {
+    document.querySelector(".checkout-container").innerHTML = "<p>No product selected.</p>";
+  }
+
+  function updateTotal() {
+    const qty = parseInt(document.getElementById("quantity").value);
+    const total = product.price * qty;
+    document.getElementById("total-amount").textContent = "Total: ₹" + total;
+  }
+
+  function placeOrder() {
+    alert("✅ Order placed for " + document.getElementById("quantity").value + " x " + product.name);
+    localStorage.removeItem("buyNowProduct");
+    window.location.href = "products.html";
+  }
+</script>
+
+</body>
+</html>

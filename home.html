@@ -1,0 +1,125 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitFuel | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-black shadow-md py-4 px-6 flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-green-600">FitFuel</h1>
+    <nav class="space-x-4">
+      <a href="products.html" class="text-white-700 hover:text--600">Shop</a>
+      <a href="lab-reports.html" class="text-white-700 hover:text--600">Lab Reports</a>
+      <a href="cart.html" class="text-white-700 hover:text--600">My Cart</a>
+      <a href="index.html" class="text-white-700 hover:text--600">Logout</a>
+      <a href="wishlist.html" class="text-white-700 hover:text--600">Wishlist</a>
+      <a href="user-dashboard.html" class="text-white-700 hover:text--600">user-dashboard</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-[url('https://images.unsplash.com/photo-1571019613578-2b193e8ce5c4')] bg-cover bg-center text-white py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center bg-black bg-opacity-60 p-6 rounded-xl">
+      <h2 class="text-4xl font-extrabold mb-4">Welcome , <span class="text-red-500">Champion</span>!</h2>
+      <p class="text-lg mb-6">Fuel your fitness journey with the best supplements and gear in the game.</p>
+      <a href="products.html" class="bg-green-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-all">Start Shopping</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="py-10 px-6 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-bold mb-6 text-center">Explore Categories</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div class="bg-white shadow p-4 text-center rounded-lg hover:scale-105 transition-transform">
+        <img src="img/whey protien.jpg" class="w-20 mx-auto mb-2" alt="Whey">
+        <p>Whey Protein</p>
+      </div>
+      <div class="bg-white shadow p-4 text-center rounded-lg hover:scale-105">
+        <img src="img/creatinee monohydrate.png" class="w-20 mx-auto mb-2" alt="Creatine">
+        <p>Creatine</p>
+      </div>
+      <div class="bg-white shadow p-4 text-center rounded-lg hover:scale-105">
+        <img src="img/pre workout.png" class="w-20 mx-auto mb-2" alt="Preworkout">
+        <p>Pre-Workout</p>
+      </div>
+      <div class="bg-white shadow p-4 text-center rounded-lg hover:scale-105">
+        <img src="img/BCAA.png" class="w-20 mx-auto mb-2" alt="BCAA">
+        <p>BCAA</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="bg-white py-12 px-6">
+    <div class="max-w-4xl mx-auto grid sm:grid-cols-3 gap-8 text-center">
+      <div>
+        <img src="delivery.png" class="mx-auto mb-1"/>
+        <p class="font-bold">Fast Delivery</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/fluency/64/checked-checkbox.png" class="mx-auto mb-2"/>
+        <p class="font-bold">Lab Tested</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/64/handshake.png" class="mx-auto mb-2"/>
+        <p class="font-bold">Trusted Brands</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-10 px-6 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-bold mb-6 text-center">Top Picks for You</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white shadow-lg rounded-lg p-4 text-center hover:shadow-xl">
+        <img src="img/whey protien.jpg" alt="Whey" class="w-24 mx-auto mb-4">
+        <h4 class="font-bold mb-2">Gold Standard Whey</h4>
+        <p class="text-red-500 font-semibold">₹2,999</p>
+        <a href="products.html" class="inline-block mt-3 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Buy Now</a>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg p-4 text-center hover:shadow-xl">
+        <img src="img/creatinee monohydrate.png" alt="Creatine" class="w-24 mx-auto mb-4">
+        <h4 class="font-bold mb-2">Creatine Monohydrate</h4>
+        <p class="text-red-500 font-semibold">₹1,499</p>
+        <a href="products.html" class="inline-block mt-3 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Buy Now</a>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg p-4 text-center hover:shadow-xl">
+        <img src="img/pre workout.png" alt="Preworkout" class="w-24 mx-auto mb-4">
+        <h4 class="font-bold mb-2">Explosive Pre-Workout</h4>
+        <p class="text-red-500 font-semibold">₹1,999</p>
+        <a href="products.html" class="inline-block mt-3 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Cards -->
+  <section class="bg-gray-200 py-10 px-6">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
+      <a href="lab-reports.html" class="bg-white shadow-md p-6 rounded-lg hover:shadow-xl transition">
+        <h4 class="font-bold text-lg mb-2">Lab Reports</h4>
+        <p class="text-sm">Check authenticity of products you purchase</p>
+      </a>
+      <a href="#" class="bg-white shadow-md p-6 rounded-lg hover:shadow-xl transition">
+        <h4 class="font-bold text-lg mb-2">Order History</h4>
+        <p class="text-sm">Track your past orders and status</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-500">
+    <p>&copy; 2025 FitFuel. All rights reserved.</p>
+    <div class="flex justify-center space-x-4 mt-2">
+      <a href="#" class="hover:text-green-600">Instagram</a>
+      <a href="#" class="hover:text-red-600">Facebook</a>
+      <a href="#" class="hover:text-red-600">Support</a>
+    </div>
+  </footer>
+
+</body>
+</html>
